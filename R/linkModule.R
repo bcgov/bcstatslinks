@@ -1,31 +1,31 @@
 linkModUI <- function(id) {
-  ns <- NS(id)
-  tagList(
-    fluidPage(
+  ns <- shiny::NS(id)
+  htmltools::tagList(
+    shiny::fluidPage(
 
       shinyjs::useShinyjs(),
-      uiOutput(ns("linkList"))
+      shiny::uiOutput(ns("linkList"))
 
     ))
 }
 
 linkModServer <- function(id) {
-  moduleServer(
+  shiny::moduleServer(
     id,
     function(input, output, session) {
       ns <- session$ns
 
-      linkCSV <- read_csv("https://raw.githubusercontent.com/bcgov/bcstatslinks/main/inst/extdata/bcstats_links.csv")
+      linkCSV <- readr::read_csv("https://raw.githubusercontent.com/bcgov/bcstatslinks/main/inst/extdata/bcstats_links.csv")
       links <- linkCSV$url
       names(links) <- linkCSV$name
 
-      output$linkList <- renderUI({
+      output$linkList <- shiny::renderUI({
 
-        div(selectInput("link-list",
+        htmltools::div(shiny::selectInput("link-list",
                     label = "",
                     selected = "nothing",
                     choices = c("More BCStats Statistics..." = "nothing", links)),
-            tags$script(type='text/javascript',
+            htmltools::tags$script(type='text/javascript',
                     "{
                        var urlMenu = document.getElementById('link-list');
                        urlMenu.onchange = function() {
