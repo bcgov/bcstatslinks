@@ -18,3 +18,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
+URL: https://github.com/bcgov/bcstatslinks
+BugReports: https://github.com/bcgov/bcstatslinks/issues
