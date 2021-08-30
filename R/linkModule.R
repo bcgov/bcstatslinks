@@ -58,12 +58,21 @@ linkModServer <- function(id) {
   )
 }
 
+
+appExampleLocations <- function() {
+
+  list(
+    simple = file.path("R","examples","minimalExample","app.R"),
+    header = file.path("R","examples","bcstatsHeaderExample","app.R")
+  )
+}
+
 #' Simple Module Demo
 
 #' @export
 simpleModuleDemo <- function(){
 
-  shiny::runApp(file.path("R","examples","minimalExample","app.R"))
+  shiny::runApp(appExampleLocations()$simple)
 }
 
 #' View code for the Simple Module Demo
@@ -71,7 +80,7 @@ simpleModuleDemo <- function(){
 #' @export
 simpleModuleDemoCode <- function() {
 
-  cat(paste0(readLines(file.path("R","examples","minimalExample","app.R")), collapse="\n"))
+  cat(paste0(readLines(appExampleLocations()$simple), collapse="\n"))
 }
 
 
@@ -81,7 +90,7 @@ simpleModuleDemoCode <- function() {
 #' @export
 bcstatsHeaderDemo <- function(){
 
-  shiny::runApp(file.path("R","examples","bcstatsHeaderExample","app.R"))
+  shiny::runApp(appExampleLocations()$header)
 
 }
 
@@ -90,7 +99,7 @@ bcstatsHeaderDemo <- function(){
 #' @export
 bcstatsHeaderDemoCode <- function(){
 
-  cat(paste0(readLines(file.path("R","examples","bcstatsHeaderExample","app.R")), collapse="\n"))
+  cat(paste0(readLines(appExampleLocations()$header), collapse="\n"))
 
 }
 
