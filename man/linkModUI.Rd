@@ -13,7 +13,7 @@ linkModUI(id)
 a UI element
 }
 \description{
-For examples run \code{simpleModuleDemo()} or \code{bcstatsHeaderDemo()}.
-To see the underlying code for these examples run \code{simpleModuleDemoCode()}
-or \code{bcstatsHeaderDemoCode()}.
+For examples run \code{runExample("simple")} or \code{runExample("bcstatsheader")}.
+To see the underlying code for these examples run
+\code{seeExampleCode("simple")} or \code{seeExampleCode("bcstatsheader")}.
 }

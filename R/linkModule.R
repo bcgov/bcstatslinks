@@ -1,9 +1,9 @@
 
 #' Module UI for clickable drop down list with links to BC Stats apps
 #'
-#' For examples run \code{simpleModuleDemo()} or \code{bcstatsHeaderDemo()}.
-#' To see the underlying code for these examples run \code{simpleModuleDemoCode()}
-#' or \code{bcstatsHeaderDemoCode()}.
+#' For examples run \code{runExample("simple")} or \code{runExample("bcstatsheader")}.
+#' To see the underlying code for these examples run
+#'  \code{seeExampleCode("simple")} or \code{seeExampleCode("bcstatsheader")}.
 #'
 #' @param id character
 #'
@@ -57,49 +57,3 @@ linkModServer <- function(id) {
     }
   )
 }
-
-
-appExampleLocations <- function() {
-
-  list(
-    simple = system.file("R","examples","minimalExample", package = "bcstatslinks"),
-    header = system.file("R","examples","bcstatsHeaderExample", package = "bcstatslinks")
-  )
-}
-
-#' Simple Module Demo
-
-#' @export
-simpleModuleDemo <- function(){
-
-  shiny::shinyAppDir(appExampleLocations()$simple)
-}
-
-#' View code for the Simple Module Demo
-#'
-#' @export
-simpleModuleDemoCode <- function() {
-
-  cat(paste0(readLines(appExampleLocations()$simple), collapse="\n"))
-}
-
-
-
-#' Demo with the standard BC Stats header
-#'
-#' @export
-bcstatsHeaderDemo <- function(){
-
-  shiny::shinyAppDir(appExampleLocations()$header)
-
-}
-
-#' View code for the BCStats Header Demo
-#'
-#' @export
-bcstatsHeaderDemoCode <- function(){
-
-  cat(paste0(readLines(appExampleLocations()$header), collapse="\n"))
-
-}
-
