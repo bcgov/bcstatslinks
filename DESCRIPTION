@@ -5,9 +5,10 @@ Authors@R:
     c(person(given = "Stephanie",
              family = "Yurchak",
              role = c("aut", "cre"),
-             email = "stephanie.yurchak2gov.bc.ca"),
+             email = "stephanie.yurchak@gov.bc.ca"),
       person(given = "Province of British Columbia",
              role = "cph"))
+Maintainer: Stephanie Yurchak <stephanie.yurchak@gov.bc.ca>
 Description: Contains a shiny module to be incorporated into bcstats shinyapps, 
     to provide a drop down menu with links to other BCStats shinyapps.
 License: Apache License (== 2.0) | file LICENSE
