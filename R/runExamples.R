@@ -16,7 +16,7 @@ seeExampleCode <- function(example) {
   if (missing(example) || !nzchar(example) ||
       !example %in% validExamples) {
     stop(
-      'Please run `runExample()` with a valid example app as an argument.\n',
+      'Please run `seeExampleCode()` with a valid example app as an argument.\n',
       validExamplesMsg,
       call. = FALSE)
   }
