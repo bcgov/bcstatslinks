@@ -62,8 +62,8 @@ linkModServer <- function(id) {
 appExampleLocations <- function() {
 
   list(
-    simple = file.path("R","examples","minimalExample","app.R"),
-    header = file.path("R","examples","bcstatsHeaderExample","app.R")
+    simple = system.file(file.path("R","examples","minimalExample","app.R"), package = "bcstatslinks"),
+    header = system.file(file.path("R","examples","bcstatsHeaderExample","app.R"), package = "bcstatslinks")
   )
 }
 
