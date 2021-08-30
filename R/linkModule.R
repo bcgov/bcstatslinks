@@ -1,8 +1,7 @@
 
 #' Module UI for clickable drop down list with links to BC Stats apps
 #'
-#' For examples run \code{runExample("simple")} or \code{runExample("bcstatsheader")}.
-#' To see the underlying code for these examples run
+#' To see examples and the underlying code for these examples run
 #'  \code{seeExampleCode("simple")} or \code{seeExampleCode("bcstatsheader")}.
 #'
 #' @param id character
