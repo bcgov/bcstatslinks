@@ -2,5 +2,4 @@
 
 export(linkModServer)
 export(linkModUI)
-export(runExample)
 export(seeExampleCode)
