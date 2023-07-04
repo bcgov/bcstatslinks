@@ -23,19 +23,29 @@ This repo also houses the csv file used to feed this drop down list, see inst/ex
 
 ### Installation
 
-TBD
+```{r, eval=FALSE}
+
+## install package
+install.packages("remotes")
+remotes::install_github("bcgov/bcstatslinks")
+
+## load package
+library(bcstatslinks)
+```
+
+Note: this package is a requirement for bcsapps. See https://github.com/bcgov/bcsapps for more information.
 
 #### Example
 
 This is a basic example which shows you how to incorporate the drop down list in your shiny app:
 
-```{r example}
+```{r eval = FALSE}
 ui <- shiny::fluidPage(
-  linkModUI(id = 'linkModule')
+  bcstatslinks::linkModUI(id = 'linkModule')
   )
 
 server <- function(input, output) { 
-  linkModServer(id = 'linkModule')
+  bcstatslinks::linkModServer(id = 'linkModule')
   }
 
 shiny::shinyApp(ui = ui, server = server)
