@@ -52,7 +52,8 @@ linkModServer <- function(id) {
         htmltools::div(shiny::selectInput("link-list",
                     label = "",
                     selected = "nothing",
-                    choices = c("More BCStats Statistics..." = "nothing", links)),
+                    choices = c("View other BCStats' dashboards" = "nothing", links),
+                    width = "250px"),
             htmltools::tags$script(type='text/javascript',
                     "{
                        var urlMenu = document.getElementById('link-list');
