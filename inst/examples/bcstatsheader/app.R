@@ -49,14 +49,14 @@ ui <- shiny::fluidPage({
                            ## MODULE CODE
                            tags$div(style = "margin-left:auto;
                                              margin-right:0;",
-                                    linkModUI('links'))
+                                    bcstatslinks::linkModUI('links'))
                   )
       )
     )
   )
   })
 
-server <- function(input, output) { linkModServer(id = 'links') }
+server <- function(input, output) { bcstatslinks::linkModServer(id = 'links') }
 
 shiny::shinyApp(ui = ui, server = server)
 
