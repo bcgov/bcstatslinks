@@ -21,8 +21,8 @@ library(bcstatslinks)
 
 test_that("load_link_csv returns a data frame with correct columns", {
   df <- load_link_csv()
-  expect_s3_class(df, "data.frame")
-  expect_true(all(c("name", "url") %in% names(df)))
+  testthat::expect_s3_class(df, "data.frame")
+  testthat::expect_true(all(c("name", "url") %in% names(df)))
 })
 
 test_that("load_link_csv returns NULL on error", {
