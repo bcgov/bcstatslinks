@@ -43,30 +43,42 @@ linkModServer <- function(id) {
     function(input, output, session) {
       ns <- session$ns
 
-      linkCSV <- readr::read_csv("https://raw.githubusercontent.com/bcgov/bcstatslinks/main/inst/extdata/bcstats_links.csv")
-      links <- linkCSV$url
-      names(links) <- linkCSV$name
+      linkCSV <- load_link_csv()
 
       output$linkList <- shiny::renderUI({
 
-        htmltools::div(shiny::selectInput("link-list",
-                    label = "",
-                    selected = "nothing",
-                    choices = c("View other BCStats' dashboards" = "nothing", links),
-                    width = "250px"),
-            htmltools::tags$script(type='text/javascript',
-                    "{
-                       var urlMenu = document.getElementById('link-list');
-                       urlMenu.onchange = function() {
-                         var userOption = this.options[this.selectedIndex];
-                         if(userOption.value != 'nothing') {
-                         window.open(userOption.value, 'bcstats-shinyapps', '');
-                         }
-                       }}"))
+        if(is.null(linkCSV)) {
+          # Fallback message in dropdown when CSV cannot be loaded
+          htmltools::div(
+            shiny::selectInput(
+              inputId = ns("link-list"),
+              label = "",
+              selected = "nothing",
+              choices = c("View other BCStats' dashboards" = "nothing", "Links are currently unavailable. Please try again later."),
+              width = "250px"))
 
+        } else {
+          links <- linkCSV$url
+          names(links) <- linkCSV$name
 
-
-      })
+          htmltools::div(
+            shiny::selectInput(
+              inputId = ns("link-list"),
+              label = "",
+              selected = "nothing",
+              choices = c("View other BCStats' dashboards" = "nothing", links),
+              width = "250px"),
+            htmltools::tags$script(
+              type='text/javascript',
+              "{
+              var urlMenu = document.getElementById('link-list');
+              urlMenu.onchange = function() {
+              var userOption = this.options[this.selectedIndex];
+              if(userOption.value != 'nothing') {
+              window.open(userOption.value, 'bcstats-shinyapps', '');
+              }}}")
+            )
+      }})
 
     }
   )
