@@ -36,14 +36,15 @@ linkModUI <- function(id) {
 #' Server-side of clickable drop down list module
 #'
 #' @param id character
+#' @param data_loader optional function that returns a data.frame with name and url columns
 #' @export
-linkModServer <- function(id) {
+linkModServer <- function(id, data_loader = load_link_csv) {
   shiny::moduleServer(
     id,
     function(input, output, session) {
       ns <- session$ns
 
-      linkCSV <- load_link_csv()
+      linkCSV <- data_loader()
 
       output$linkList <- shiny::renderUI({
 
