@@ -4,10 +4,12 @@
 \alias{linkModServer}
 \title{Server-side of clickable drop down list module}
 \usage{
-linkModServer(id)
+linkModServer(id, data_loader = load_link_csv)
 }
 \arguments{
 \item{id}{character}
+
+\item{data_loader}{optional function that returns a data.frame with name and url columns}
 }
 \description{
 Server-side of clickable drop down list module

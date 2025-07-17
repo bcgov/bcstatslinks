@@ -1,6 +1,6 @@
 Package: bcstatslinks
 Title: Link list module for incorporating into bcstats shinyapps
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     c(person(given = "Stephanie",
              family = "Yurchak",
@@ -15,7 +15,7 @@ License: Apache License (== 2.0) | file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.1
+RoxygenNote: 7.3.2
 Imports:
     htmltools,
     readr,
@@ -23,7 +23,10 @@ Imports:
     shinyjs
 Suggests: 
     knitr,
-    rmarkdown
+    mockery,
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
 URL: https://github.com/bcgov/bcstatslinks
 BugReports: https://github.com/bcgov/bcstatslinks/issues
+Config/testthat/edition: 3
