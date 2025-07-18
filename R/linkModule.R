@@ -64,7 +64,7 @@ linkModServer <- function(id, data_loader = load_link_csv) {
 
           htmltools::div(
             shiny::selectInput(
-              inputId = ns("link-list"),
+              inputId = "link-list",
               label = "",
               selected = "nothing",
               choices = c("View other BCStats' dashboards" = "nothing", links),
