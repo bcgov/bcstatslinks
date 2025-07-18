@@ -1,3 +1,8 @@
+# bcstatslinks 0.1.1
+
+## Bug fix
+* Removed erroneous namespace that prevented the links from being clickable when used in other apps.
+
 # bcstatslinks 0.1.0
 
 ## Improvements

@@ -1,6 +1,6 @@
 Package: bcstatslinks
 Title: Link list module for incorporating into bcstats shinyapps
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     c(person(given = "Stephanie",
              family = "Yurchak",
